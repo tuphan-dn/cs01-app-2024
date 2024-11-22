@@ -14,9 +14,11 @@
     "@remix-run/node": "^2.14.0",
     "@remix-run/react": "^2.14.0",
     "@remix-run/serve": "^2.14.0",
+    "cs01-2024": "^1.0.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "viem": "^2.21.48"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.14.0",
