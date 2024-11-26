@@ -1,14 +1,17 @@
 export const env = process.env.NODE_ENV
 
-const configs: Record<typeof env, { rpc: string }> = {
+const configs: Record<typeof env, { mainnet: string; holesky: string }> = {
   development: {
-    rpc: 'https://holesky.infura.io/v3/783c24a3a364474a8dbed638263dc410',
+    holesky: 'https://holesky.infura.io/v3/783c24a3a364474a8dbed638263dc410',
+    mainnet: 'https://mainnet.infura.io/v3/783c24a3a364474a8dbed638263dc410',
   },
   test: {
-    rpc: '',
+    holesky: '',
+    mainnet: '',
   },
   production: {
-    rpc: 'https://mainnet.infura.io/v3/783c24a3a364474a8dbed638263dc410',
+    holesky: 'https://holesky.infura.io/v3/783c24a3a364474a8dbed638263dc410',
+    mainnet: 'https://mainnet.infura.io/v3/783c24a3a364474a8dbed638263dc410',
   },
 }
 

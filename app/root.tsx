@@ -6,8 +6,10 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 import type { LinksFunction } from '@remix-run/node'
+import WalletProvider from '~/providers/wallet.provider'
 
 import '~/styles/index.scss'
+import Header from './header'
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -32,7 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <WalletProvider>{children}</WalletProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -41,5 +43,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />
+  return (
+    <div className="w-full min-h-dvh flex flex-col justify-center">
+      <Header />
+      <div className="grid grid-cols-1 grow">
+        <div className="col-span-full">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  )
 }
